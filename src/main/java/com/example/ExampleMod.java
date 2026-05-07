@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.util.ActionResult;
 import net.minecraft.text.Text;
-import net.minecraft.util.math.BlockPos;
+ import net.minecraft.util.math.BlockPos;
 
 public class ExampleMod implements ModInitializer {
     @Override
@@ -14,7 +14,7 @@ public class ExampleMod implements ModInitializer {
             String blockName = world.getBlockState(pos).getBlock().getTranslationKey().toLowerCase();
 
             if (blockName.contains("crate") || blockName.contains("chest")) {
-                if (world.isClient) {
+                 if (!world.isClient) 
                     player.sendMessage(Text.literal("§6[Mod] §aBypassing Crate Key..."), true);
                 }
                 return ActionResult.SUCCESS;
