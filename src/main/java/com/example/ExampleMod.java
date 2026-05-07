@@ -22,3 +22,4 @@ public class ExampleMod implements ModInitializer {
             return ActionResult.PASS;
         });
     }
+}
